@@ -155,7 +155,9 @@ Widget buildLoginPageForm(LoginSignupController controller) {
                 child: CustomButtonWidget(
                   backgroundColor: AppColor.primaryOriginalColor,
                   onPressed: () async {
-                    NetworkUtils.checkInternetAndExecute(() async {
+              //   Get.toNamed(RouteConstant.dashboard);
+
+                       NetworkUtils.checkInternetAndExecute(() async {
                       if (controller.mobileNumberController.text.isEmpty) {
                         controller.showError.value = true;
                         return;

@@ -16,7 +16,7 @@ class ApiService implements IApiService {
 
       final Uri url = Uri.parse('$baseUrl$endpoint');
       try {
-        final response = await http.post(
+        http.Response response = await http.post(
           url,
           headers: {'Content-Type': 'application/json'},
           body: jsonEncode(payload),

@@ -18,7 +18,7 @@ class NetworkUtils {
 
   static void _showNoInternetAlert() {
     if (Get.context != null) {
-      SnackBarWidget().warningMsg(icon: AppIcons.wifiOff(color: AppColor.whiteOriginalColor), title: 'Connection Error', message: 'NoInternetText'.tr);
+      SnackBarWidget().warningMsg(icon: AppIcons.wifiOff(color: AppColor.whiteOriginalColor), title: 'connection_error'.tr, message: 'NoInternetText'.tr);
     }
   }
 }

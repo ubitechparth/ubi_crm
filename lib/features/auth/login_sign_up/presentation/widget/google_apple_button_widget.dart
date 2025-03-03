@@ -49,7 +49,7 @@ Widget buildOtherButtonWidget(context,controller){
                 }
               },
               child: Image.asset(
-                AppAssets.image.googleImage,height: Get.height*0.09,
+                LoginPageAssets().googleImage,height: Get.height*0.09,
               ),
             ),
             SizedBox(width: Get.width * 0.060),
@@ -64,7 +64,7 @@ Widget buildOtherButtonWidget(context,controller){
                 }
               },
               child: Image.asset(
-                AppAssets.image.microSoftImage,height: Get.height*0.09,
+                LoginPageAssets().microSoftImage,height: Get.height*0.09,
               ),
             )
                 : InkWell(
@@ -83,7 +83,7 @@ Widget buildOtherButtonWidget(context,controller){
                 }
               },
               child: Image.asset(
-                  AppAssets.image.appleImage,height: Get.height*0.09,
+                LoginPageAssets().appleImage,height: Get.height*0.09,
               ),
             ),
             SizedBox(width: Get.width * 0.060),
@@ -91,7 +91,7 @@ Widget buildOtherButtonWidget(context,controller){
             InkWell(
               onTap: () => showCupertinoBottomSheet(controller),
               child: Image.asset(
-                AppAssets.image.loginPageMore,height: Get.height*0.09,
+                LoginPageAssets().loginPageMore,height: Get.height*0.09,
               ),
             ),
 

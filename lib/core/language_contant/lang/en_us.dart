@@ -8,6 +8,7 @@ const Map<String, String> enUS = {
   'salesText' : 'Sales',
   'leadsText' : 'Leads',
   'enter_your_password':"Enter your password",
+  'connection_error':"Connection Error",
 
   ///// Language Selection page
   'on_select_language':'Select Language',

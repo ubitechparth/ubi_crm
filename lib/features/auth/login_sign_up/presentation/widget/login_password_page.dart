@@ -30,7 +30,7 @@ class LoginPasswordPage extends GetView<LoginSignupController>{
           elevation: 0,
           leading: Padding(
             padding: EdgeInsets.only(left: 12),
-            child:  Image.asset(AppAssets.image.ubiSalesLog),
+            child:  Image.asset(UbiSalesLogo().ubiSalesLogo),
         )
         ),
         body: SingleChildScrollView(
@@ -75,7 +75,6 @@ class LoginPasswordPage extends GetView<LoginSignupController>{
                               ),
                               contentPadding: EdgeInsets.symmetric(horizontal: 0,vertical: 15),
                             ),
-
                          )
                     ),
                     SizedBox(height: Get.height*0.01),
@@ -116,14 +115,12 @@ class LoginPasswordPage extends GetView<LoginSignupController>{
                             backgroundColor: AppColor.primaryOriginalColor,
                             child: TextWidget(text: 'done_text'.tr),
                             onPressed: () async {
-
                               NetworkUtils.checkInternetAndExecute(() async {
-                                var validate = formKey.currentState!.validate();
+                                bool validate = formKey.currentState!.validate();
                                 if(validate){
                                   controller.loginAPI();
                                 }
                               });
-
                             },
                           ),
                         )

@@ -49,6 +49,7 @@ class Images {
   //Home Page Assets
   String get empTrackingCard => 'assets/home_page_assets/employee_tracking_card.png';
   String get referEarnCard => 'assets/home_page_assets/referEarnCard.jpg';
+  String get addonIcon => 'assets/dashboard_assets/addon_icon.png';
 
 //   String get csv => 'assets/images/csv.png';
 //   String get pdf => 'assets/images/pdf.png';
@@ -58,7 +59,6 @@ class Images {
 //   String get payrollCard => 'assets/images/payroll_card_img.png';
 //   String get absent => 'assets/images/absent.png';
 //   String get disApprove => 'assets/images/disapprove.png';
-  String get addonIcon => 'assets/dashboard_assets/addon_icon.png';
 //   String get avatar => 'assets/images/avatar.png';
 //   String get invoice => 'assets/images/invoice.png';
 //   String get leave => 'assets/images/leave.png';
@@ -85,7 +85,6 @@ class Images {
 //   String get announcement => 'assets/images/announcement.png';
 //   String get gift => 'assets/images/gift.png';
 //   String get warning => 'assets/images/warning.png';
-  String get ubiSalesLog => 'assets/login_header_img.png';
 //   String get newApple => 'assets/images/newapple.png';
 //   String get newGoogle => 'assets/images/newgoogle.png';
 //   String get newMicrosoft => 'assets/images/newMicrosoft.png';
@@ -95,16 +94,51 @@ class Images {
 //   String get newQr => "assets/images/new_qr.png";
 //   String get newLanguage => "assets/images/new_language.png";
 //   String get loginPageAttendance => "assets/images/login_bg_2.png";
-  String get appleImage => "assets/login_signup_assets/apple_image.png";
+
+}
+
+
+class UbiSalesLogo{
+  String get ubiSalesLogo => 'assets/ubi_sales_logo.png';
+}
+
+class LoginPageAssets{
+  String get loginPageHeader=> 'assets/login_signup_assets/login_header_img.png';
   String get googleImage => "assets/login_signup_assets/google_image.png";
-  String get loginPageHeader2 => 'assets/login_signup_assets/login_header_img.png';
-  String get loginPageHeader=> 'assets/login_signup_assets/login_header_img.jpg';
-  String get loginPageMore => "assets/login_signup_assets/login_more.png";
   String get microSoftImage => "assets/login_signup_assets/micro_soft_image.png";
+  String get appleImage => "assets/login_signup_assets/apple_image.png";
+  String get loginPageMore => "assets/login_signup_assets/login_more.png";
+}
+
+class SignUpPageAssets{
+  String get services =>  'assets/sign_up_assets/service.svg';
+  String get security =>      'assets/sign_up_assets/security.svg';
+  String get healthcare =>    'assets/sign_up_assets/healthcare.svg';
+  String get manufacturing => 'assets/sign_up_assets/Manufacturing.svg';
+  String get restaurants =>   'assets/sign_up_assets/Restaurants.svg';
+  String get construction =>  'assets/sign_up_assets/Construction.svg';
+  String get education =>     'assets/sign_up_assets/education.svg';
+  String get hospitality => 'assets/sign_up_assets/Hospitality.svg';
+  String get retail => 'assets/sign_up_assets/Retail.svg';
+  String get itIndustry => 'assets/sign_up_assets/IT_Industry.svg';
+  String get otherIndustry => 'assets/sign_up_assets/Other.svg';
+  String get travel => 'assets/login_signup_assets/Travel.svg';
 }
 
 class Svg {
   const Svg();
+
+
+  //Login
+
+  //Sign up Assets SVG
+
+  //Addons Assets
+  String get attendance => 'assets/addons_assets/attendance.svg';
+  String get geofence => 'assets/addons_assets/geofence.svg';
+  String get advancedLeave => 'assets/addons_assets/advanced_leave.svg';
+  String get visitImage => 'assets/addons_assets/visit_icon.svg';
+  String get locationTracking => 'assets/addons_assets/location_tracking.svg';
 
   // String get appleIOSIcon => 'assets/svg/apple_ios.svg';
   // String get googleIOSIcon => 'assets/svg/google_ios.svg';
@@ -119,11 +153,6 @@ class Svg {
   // String get employees => 'assets/svg/employees.svg';
   // String get faceRecognition => 'assets/svg/face_recognition.svg';
   // String get faceKiosk => 'assets/svg/face_kiosk.svg';
-  String get attendance => 'assets/addons_assets/attendance.svg';
-  String get geofence => 'assets/addons_assets/geofence.svg';
-  String get advancedLeave => 'assets/addons_assets/advanced_leave.svg';
-  String get visitImage => 'assets/addons_assets/visit_icon.svg';
-  String get locationTracking => 'assets/addons_assets/location_tracking.svg';
   // String get historyOff => 'assets/svg/history_off.svg';
   // String get applyLeave => 'assets/svg/apply_leave.svg';
   // String get manageClient => 'assets/svg/manage_client.svg';
@@ -177,7 +206,7 @@ class Svg {
   // String get newShifts => 'assets/svg/newShifts.svg';
   // String get newTimeOff => 'assets/svg/newTimeOff.svg';
   // String get newWeeklyOff => 'assets/svg/newWeeklyOff.svg';
-  String get addCircle => 'assets/login_signup_assets/addCircle.svg';
+
 
 
 
@@ -189,7 +218,7 @@ class Svg {
   String get vi => 'assets/login_signup_assets/VI.svg';
   String get growth => 'assets/svg/growth.svg';
 
-  String get travel => 'assets/login_signup_assets/Travel.svg';
+
 
 
   // String get appleImage => 'assets/svg/apple_image.svg';
@@ -197,17 +226,9 @@ class Svg {
   // String get microsoftImage => 'assets/svg/micro_soft_image.svg';
 
   // Sign Up Asses
-  String get services =>      'assets/sign_up_assets/service.svg';
-  String get security =>      'assets/sign_up_assets/security.svg';
-  String get healthcare =>    'assets/sign_up_assets/healthcare.svg';
-  String get manufacturing => 'assets/sign_up_assets/Manufacturing.svg';
-  String get restaurants =>   'assets/sign_up_assets/Restaurants.svg';
-  String get construction =>  'assets/sign_up_assets/Construction.svg';
-  String get education =>     'assets/sign_up_assets/education.svg';
-  String get hospitality => 'assets/sign_up_assets/Hospitality.svg';
-  String get retail => 'assets/sign_up_assets/Retail.svg';
-  String get itIndustry => 'assets/sign_up_assets/IT_Industry.svg';
-  String get otherIndustry => 'assets/sign_up_assets/Other.svg';
+
+
+
 
 
 

@@ -1101,13 +1101,6 @@
     "timeZone": "Europe/Bucharest"
   },
   {
-    "name": "Russia",
-    "dial_code": "+7",
-    "code": "RU",
-    "digit": "10",
-    "timeZone": "Europe/Moscow"
-  },
-  {
     "name": "Rwanda",
     "dial_code": "+250",
     "code": "RW",
@@ -1240,6 +1233,14 @@
     "digit": "9",
     "timeZone": "Africa/Johannesburg"
   },
+  {
+    "name": "South Sudan",
+    "dial_code": "+211",
+    "code": "SS",
+    "digit": "9",
+    "timeZone": "Africa/Juba"
+  },
+
   {
     "name": "Spain",
     "dial_code": "+34",
@@ -1478,5 +1479,257 @@
     "code": "ZW",
     "digit": "10",
     "timeZone": "Africa/Harare"
+  },
+  {
+    "name": "North Korea",
+    "dial_code": "+850",
+    "code": "KP",
+    "digit": "10",
+    "timeZone": "Asia/Pyongyang"
+  },
+  {
+    "name": "Holy See",
+    "dial_code": "+379",
+    "code": "VA",
+    "digit": "10",
+    "timeZone": "Europe/Vatican"
+  },
+  {
+    "name": "Lao People's Democratic Republic",
+    "dial_code": "+856",
+    "code": "LA",
+    "digit": "9",
+    "timeZone": "Asia/Vientiane"
+  },
+  {
+    "name": "North Macedonia",
+    "dial_code": "+389",
+    "code": "MK",
+    "digit": "8",
+    "timeZone": "Europe/Skopje"
+  },
+  {
+    "name": "South Korea",
+    "dial_code": "+82",
+    "code": "KR",
+    "digit": "10",
+    "timeZone": "Asia/Seoul"
+  },
+  {
+    "name": "Russia",
+    "dial_code": "+7",
+    "code": "RU",
+    "digit": "10",
+    "timeZone": "Europe/Moscow"
+  },
+  {
+    "name": "State of Palestine",
+    "dial_code": "+970",
+    "code": "PS",
+    "digit": "9",
+    "timeZone": "Asia/Gaza"
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "dial_code": "+963",
+    "code": "SY",
+    "digit": "9",
+    "timeZone": "Asia/Damascus"
+  },
+  {
+    "name": "United Republic of Tanzania",
+    "dial_code": "+255",
+    "code": "TZ",
+    "digit": "9",
+    "timeZone": "Africa/Dar_es_Salaam"
+  },
+  {
+    "name": "Antarctica",
+    "dial_code": "+672",
+    "code": "AQ",
+    "digit": "6",
+    "timeZone": "Antarctica/Casey"
+  },
+  {
+    "name": "Bonaire, Sint Eustatius and Saba",
+    "dial_code": "+599",
+    "code": "BQ",
+    "digit": "7",
+    "timeZone": "America/Kralendijk"
+  },
+  {
+    "name": "Bouvet Island",
+    "dial_code": "+47",
+    "code": "BV",
+    "digit": "8",
+    "timeZone": "Europe/Oslo"
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "dial_code": "+246",
+    "code": "IO",
+    "digit": "7",
+    "timeZone": "Indian/Chagos"
+  },
+  {
+    "name": "British Virgin Islands",
+    "dial_code": "+1",
+    "code": "VG",
+    "digit": "10",
+    "timeZone": "America/Tortola"
+  },
+  {
+    "name": "Christmas Island",
+    "dial_code": "+61",
+    "code": "CX",
+    "digit": "9",
+    "timeZone": "Indian/Christmas"
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "dial_code": "+61",
+    "code": "CC",
+    "digit": "9",
+    "timeZone": "Indian/Cocos"
+  },
+  {
+    "name": "Curaçao",
+    "dial_code": "+599",
+    "code": "CW",
+    "digit": "7",
+    "timeZone": "America/Curacao"
+  },
+  {
+    "name": "Falkland Islands (Malvinas)",
+    "dial_code": "+500",
+    "code": "FK",
+    "digit": "5",
+    "timeZone": "Atlantic/Stanley"
+  },
+  {
+    "name": "French Southern Territories",
+    "dial_code": "+262",
+    "code": "TF",
+    "digit": "9",
+    "timeZone": "Indian/Kerguelen"
+  },
+  {
+    "name": "Heard Island and McDonald Islands",
+    "dial_code": "+672",
+    "code": "HM",
+    "digit": "6",
+    "timeZone": "Indian/Kerguelen"
+  },
+  {
+    "name": "Côte d'Ivoire",
+    "dial_code": "+225",
+    "code": "CI",
+    "digit": "8",
+    "timeZone": "Africa/Abidjan"
+  },
+  {
+    "name": "Mayotte",
+    "dial_code": "+262",
+    "code": "YT",
+    "digit": "9",
+    "timeZone": "Indian/Mayotte"
+  },
+  {
+    "name": "Pitcairn",
+    "dial_code": "+64",
+    "code": "PN",
+    "digit": "10",
+    "timeZone": "Pacific/Pitcairn"
+  },
+  {
+    "name": "Réunion",
+    "dial_code": "+262",
+    "code": "RE",
+    "digit": "9",
+    "timeZone": "Indian/Reunion"
+  },
+  {
+    "name": "Saint Barthélemy",
+    "dial_code": "+590",
+    "code": "BL",
+    "digit": "9",
+    "timeZone": "America/St_Barthelemy"
+  },
+  {
+    "name": "Saint Helena",
+    "dial_code": "+290",
+    "code": "SH",
+    "digit": "4",
+    "timeZone": "Atlantic/St_Helena"
+  },
+  {
+    "name": "Saint Martin",
+    "dial_code": "+590",
+    "code": "MF",
+    "digit": "9",
+    "timeZone": "America/Marigot"
+  },
+  {
+    "name": "Sint Maarten",
+    "dial_code": "+1",
+    "code": "SX",
+    "digit": "10",
+    "timeZone": "America/Lower_Princes"
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "dial_code": "+500",
+    "code": "GS",
+    "digit": "7",
+    "timeZone": "Atlantic/South_Georgia"
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "dial_code": "+47",
+    "code": "SJ",
+    "digit": "8",
+    "timeZone": "Arctic/Longyearbyen"
+  },
+  {
+    "name": "Tokelau",
+    "dial_code": "+690",
+    "code": "TK",
+    "digit": "4",
+    "timeZone": "Pacific/Fakaofo"
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "dial_code": "+1",
+    "code": "UM",
+    "digit": "10",
+    "timeZone": "Pacific/Wake"
+  },
+  {
+    "name": "United States Virgin Islands",
+    "dial_code": "+1",
+    "code": "VI",
+    "digit": "10",
+    "timeZone": "America/St_Thomas"
+  },
+  {
+    "name": "Western Sahara",
+    "dial_code": "+212",
+    "code": "EH",
+    "digit": "9",
+    "timeZone": "Africa/El_Aaiun"
+  },
+  {
+    "name": "Brunei",
+    "dial_code": "+673",
+    "code": "BN",
+    "digit": "7",
+    "timeZone": "Asia/Brunei"
+  },
+  {
+    "name": "Bolivia",
+    "dial_code": "+591",
+    "code": "BO",
+    "digit": "8",
+    "timeZone": "America/La_Paz"
   }
 ]

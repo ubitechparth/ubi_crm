@@ -30,7 +30,7 @@ Widget buildLoginPageHeader(LoginSignupController controller){
                 width:Get.width,
                 height: Get.height*0.33,
                 child: Image.asset(
-                  AppAssets.image.loginPageHeader ,
+                  LoginPageAssets().loginPageHeader ,
                   fit: BoxFit.cover,
                 )
             ),

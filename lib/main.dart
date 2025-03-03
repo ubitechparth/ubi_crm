@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaleFactor: MediaQuery.textScaleFactorOf(context).clamp(0.7, 1.1)),
       child: GetMaterialApp(
-        title: 'UBI SALES CRM',
+        title: 'UBI CRM',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,

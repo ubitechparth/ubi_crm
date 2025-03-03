@@ -12,6 +12,7 @@ import 'package:ubi_crm/features/auth/login_sign_up/presentation/login_signup_co
 import 'package:ubi_crm/theme/color_constant.dart';
 import 'package:ubi_crm/theme/text_style.dart';
 
+
 class ContinueWithEmail extends StatelessWidget {
   const ContinueWithEmail({super.key});
   @override
@@ -35,7 +36,7 @@ Widget buildLoginPageForm(LoginSignupController controller) {
             children: [
               SizedBox(height: 30),
               Image.asset(
-                AppAssets.image.ubiSalesLog,
+                UbiSalesLogo().ubiSalesLogo,
                 width: 80,
                 height: 60,
               ),

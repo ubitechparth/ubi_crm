@@ -38,6 +38,7 @@ class Data {
   int employeeId;
   int organizationId;
 
+
   Data({
     required this.status,
     required this.pwd,

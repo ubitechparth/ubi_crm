@@ -30,18 +30,18 @@ class SignupController extends GetxController {
 
   //Industry list
   RxList<Map<String, String>> industry = [
-    {'title': 'Services', 'icon': AppAssets.svg.services,},
-    {'title': 'Security', 'icon': AppAssets.svg.security,},
-    {'title': 'Healthcare', 'icon': AppAssets.svg.healthcare,},
-    {'title': 'Manufacturing', 'icon': AppAssets.svg.manufacturing,},
-    {'title': 'Construction', 'icon': AppAssets.svg.construction,},
-    {'title': 'Education', 'icon': AppAssets.svg.education,},
-    {'title': 'Hospitality', 'icon': AppAssets.svg.hospitality,},
-    // {'title': 'Retail', 'icon': AppAssets.svg.retail,},
-    {'title': 'IT and Technology', 'icon': AppAssets.svg.itIndustry,},
-    {'title': 'Restaurants', 'icon': AppAssets.svg.restaurants,},
-    {'title': 'Travel and Logistics', 'icon': AppAssets.svg.travel,},
-    {'title': 'Other Industries', 'icon': AppAssets.svg.otherIndustry,},
+    {'title': 'Services', 'icon': SignUpPageAssets().services,},
+    {'title': 'Security', 'icon': SignUpPageAssets().security,},
+    {'title': 'Healthcare', 'icon': SignUpPageAssets().healthcare,},
+    {'title': 'Manufacturing', 'icon': SignUpPageAssets().manufacturing,},
+    {'title': 'Construction', 'icon': SignUpPageAssets().construction,},
+    {'title': 'Education', 'icon': SignUpPageAssets().education,},
+    {'title': 'Hospitality', 'icon': SignUpPageAssets().hospitality,},
+    // {'title': 'Retail', 'icon': SignUpPageAssets().retail,},
+    {'title': 'IT and Technology', 'icon': SignUpPageAssets().itIndustry,},
+    {'title': 'Restaurants', 'icon': SignUpPageAssets().restaurants,},
+    {'title': 'Travel and Logistics', 'icon': SignUpPageAssets().travel,},
+    {'title': 'Other Industries', 'icon': SignUpPageAssets().otherIndustry,},
   ].obs;
 
   RxInt selectedIndex = (-1).obs; //Number of employees index

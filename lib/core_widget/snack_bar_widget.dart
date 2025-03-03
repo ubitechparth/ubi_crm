@@ -152,10 +152,10 @@ class SnackBarWidget {
       return Get.snackbar(
         title,
         msg,
-        icon: Container(decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(25)), child: AppIcons.clearIcon()),
+        icon: CircleAvatar(radius: 15,child: AppIcons.clearIcon(color: Colors.red),),
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: AppColor.dangerColor,
-        borderRadius: 20,
+        borderRadius: 10,
         margin: const EdgeInsets.all(15),
         colorText: Colors.white,
         duration: const Duration(seconds: 3),

@@ -91,7 +91,7 @@ class DataTableExample extends StatelessWidget {
   // Sample data model
   final List<Map<String, String>> _data = [
     {'company': 'Abc Company pvt','date': '09 May', 'Name': 'John Doe',     'Phone':'+91746474664', 'leadOwner':'Jitendra Kosta',   'product': 'UbiAttendance', 'dealAmount':'2540'},
-    {'company': 'Ubitech Soluti', 'date': '10 May', 'Name': 'Jane Smith',   'Phone':'+91746474664', 'leadOwner':'Shruti Goyal',    'product': 'Product B', 'dealAmount':'2540'},
+    {'company': 'Ubitech Solution', 'date': '10 May', 'Name': 'Jane Smith',   'Phone':'+91746474664', 'leadOwner':'Shruti Goyal',    'product': 'Product B', 'dealAmount':'2540'},
     {'company': 'Godrej',         'date': '11 May', 'Name': 'Mike Johnson', 'Phone':'+91746474664', 'leadOwner':'Sharukh Khan',    'product': 'Product C', 'dealAmount':'2540'},
     {'company': 'XYZ Corp',       'date': '12 May', 'Name': 'Emily Davis',  'Phone':'+91746474664', 'leadOwner':'Ashi Kustwani',    'product': 'Product D', 'dealAmount':'2540'},
     {'company': 'PQR Ltd',        'date': '13 May', 'Name': 'David Wilson', 'Phone':'+91746474664', 'leadOwner':'Jitendra Kosta',    'product': 'Product E', 'dealAmount':'2540'},
