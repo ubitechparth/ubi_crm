@@ -1,0 +1,110 @@
+{
+  "project_info": {
+    "project_number": "288178486097",
+    "project_id": "ubihrm",
+    "storage_bucket": "ubihrm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288178486097:android:0f08e7cfd3d9d75566f170",
+        "android_client_info": {
+          "package_name": "com.ubihrm.ubihrm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288178486097-659b37i3gb19pfruuuk38vbtvvr2ned3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "6ec052abdfe3e05c60fb3f7a813d78d9e045cc78"
+          }
+        },
+        {
+          "client_id": "288178486097-7t12kbfn23jekrbbsqr2uvpn9q12jmrl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "4094f7b634f7163241e82f66e56fc76dd876419b"
+          }
+        },
+        {
+          "client_id": "288178486097-alfe3ohpb9p7p17e26lh3dlvi8li61r6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "1dd27c327cc8326ce223ee0c249c72c8ff6aa0a7"
+          }
+        },
+        {
+          "client_id": "288178486097-e7rkj4529rqq4jip9vvkfcpc2gr23m39.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "b29c51560b26340469f2e8813c6203b8d5f7e25a"
+          }
+        },
+        {
+          "client_id": "288178486097-fkvjtv03cqk35e2a33525aa0ubpqe7j6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "e6f232eb2b553318b38f1c02a37b9f76d41fb9f7"
+          }
+        },
+        {
+          "client_id": "288178486097-nfg96na3lgtjkgqa4gh3ufsbu0irjjgp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "354e66cd9cf4a362af1dec47be9061b73e313248"
+          }
+        },
+        {
+          "client_id": "288178486097-v1u7t7hut8svg03utf8svtglqqimbbpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "1762810b2d0bb9cb0ed5320952299ad808715e66"
+          }
+        },
+        {
+          "client_id": "288178486097-vd9gcguvj9d361cop2dhbv9kv3jr17us.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubihrm.ubihrm",
+            "certificate_hash": "19c86f0923188befc5058193d1c4052f6ad09c15"
+          }
+        },
+        {
+          "client_id": "288178486097-6un2n3s3he1u4nf5j9q84k2vgs0j09di.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXiJK6j4TWMpxsbhR2ZrklKcerbSZQtxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288178486097-6un2n3s3he1u4nf5j9q84k2vgs0j09di.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "288178486097-4m2jb15eikmqtcn3j2qsorqb60930e3t.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.ubitech.attendance"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ubi_crm/core/globals.dart';
 import 'package:ubi_crm/core/language_contant/localization_service.dart';
 import 'package:ubi_crm/core/routes/route_constant.dart';
@@ -22,7 +23,14 @@ class SplashScreenController extends GetxController {
 
   @override
   void onReady() async {
-    Get.offAllNamed(RouteConstant.languageSelectionPage);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool? isLoggedIn = prefs.getBool('isLoggedIn');
+
+    if(isLoggedIn==true) {
+      Get.offAllNamed(RouteConstant.dashboard);
+    }else{
+      Get.offAllNamed(RouteConstant.languageSelectionPage);
+    }
     super.onReady();
   }
 

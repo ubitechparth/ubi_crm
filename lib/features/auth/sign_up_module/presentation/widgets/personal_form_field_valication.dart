@@ -14,6 +14,7 @@ class FormFieldWithValidation extends StatelessWidget {
   final Function(String)? onFieldSubmit; // Change the type here
   final TextInputType? keyboardType;
   final ValueChanged<String>? onChanged; // Add this
+  final String? Function(String?)? validator;
 
   const FormFieldWithValidation({super.key,
     required this.focusNode,
@@ -26,6 +27,7 @@ class FormFieldWithValidation extends StatelessWidget {
     this.onFieldSubmit,
     this.keyboardType,
     this.onChanged, // Add this
+    this.validator, // Add this
   });
 
   @override
@@ -44,6 +46,7 @@ class FormFieldWithValidation extends StatelessWidget {
           keyboardType: keyboardType,
           onchange: onChanged, // Pass the callback
           contentPadding: EdgeInsets.symmetric(vertical: 15),
+          validator: validator,
         ),
         if (!errorBool)
           Text(

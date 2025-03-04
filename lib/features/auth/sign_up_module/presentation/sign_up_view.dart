@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/controller/sign_up_controller.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/add_features_widget.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/number_of_employee_widget.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/personal_form_widget.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/previous_text.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/progress_indicator.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/specify_industry_widget.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/your_roles_widget.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/sign_up_controller.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/add_features_widget.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/number_of_employee_widget.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/personal_form_widget.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/previous_text.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/progress_indicator.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/specify_industry_widget.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/your_roles_widget.dart';
 
 class SignupViewPage extends GetView<SignupController> {
   const SignupViewPage({super.key});

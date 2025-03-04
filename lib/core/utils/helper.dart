@@ -9,3 +9,11 @@ String encode5t(String str) {
   }
   return str;
 }
+
+String decode5t(String str) {
+  for (int i = 0; i < 5; i++) {
+    // Reverse the string, then decode from Base64
+    str = utf8.decode(base64.decode(str.split('').reversed.join()));
+  }
+  return str;
+}

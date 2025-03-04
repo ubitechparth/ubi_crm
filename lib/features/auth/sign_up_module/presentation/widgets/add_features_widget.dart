@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ubi_crm/core/app_assets.dart';
-import 'package:ubi_crm/core/globals.dart';
-import 'package:ubi_crm/core/routes/route_constant.dart';
+import 'package:ubi_crm/core/utils/Internet_network/network_handle.dart';
 import 'package:ubi_crm/core_widget/custom_elevated_button_widget.dart';
 import 'package:ubi_crm/core_widget/snack_bar_widget.dart';
 import 'package:ubi_crm/core_widget/text_widget.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/controller/sign_up_controller.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/sign_up_controller.dart';
 import 'package:ubi_crm/theme/color_constant.dart';
 import 'package:ubi_crm/theme/text_style.dart';
 import 'package:get/get.dart';
@@ -56,8 +55,8 @@ Widget buildAddFeaturesWidget(SignupController signupController, BuildContext co
               text: "Let_go".tr,
             ),
             onPressed: () async {
-              Get.toNamed(RouteConstant.dashboard,);
-              if (isNetworkAvailable.value == true) {
+
+  NetworkUtils.checkInternetAndExecute(() async {
                 bool anyFeatureEnabled = [
                   signupController.featureAttendance,
                   signupController.featureLeave,
@@ -66,17 +65,13 @@ Widget buildAddFeaturesWidget(SignupController signupController, BuildContext co
                   signupController.featureTimesheet
                 ].any((feature) => feature.value);
                 if (!anyFeatureEnabled) {
-                  SnackBarWidget()
-                      .warningMsg(message: 'select_atleast_one_feature'.tr);
+                  SnackBarWidget().warningMsg(message: 'select_atleast_one_feature'.tr);
                 } else {
                   //   globals.newSignUp.value = true;
                   //// handle api
                   // controller.checkLogin();
                 }
-              } else {
-                SnackBarWidget()
-                    .alertMsg("NoInternetText".tr);
-              }
+              });
             },
           ),
         ),

@@ -4,6 +4,8 @@ class ApiConstants {
   static String countryName = 'countryName';
   static String userName   = 'userName';
   static String password   = 'password';
+  static String companyName   = 'companyName';
+  static String emailId   = 'emailId';
 
 }
 

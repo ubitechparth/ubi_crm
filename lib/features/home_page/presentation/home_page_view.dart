@@ -23,7 +23,7 @@ class HomePageView extends GetView<HomePageController>{
     return Scaffold(
       key: _scaffoldKey,
       appBar: CustomAppBar(
-        title: AppTextStyle.appBarText( "Ubitech Solutions Pvt Ltd"),
+        title: Obx(()=>AppTextStyle.appBarText( controller.companyName.value)),
         leading: IconButton(
             icon:  Icon(Icons.menu,color: AppColor.whiteOriginalColor,),
             onPressed: () {

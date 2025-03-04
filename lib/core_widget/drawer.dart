@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:ubi_crm/core/globals.dart';
 import 'package:ubi_crm/core/routes/route_constant.dart';
+import 'package:ubi_crm/core/utils/shared_preferences.dart';
 import 'package:ubi_crm/core_widget/custom_elevated_button_widget.dart';
 import 'package:ubi_crm/core_widget/icon_widget.dart';
 import 'package:ubi_crm/features/home_page/presentation/widgets/premium_feature.dart';
@@ -37,14 +38,11 @@ getAppDrawer(context) {
   return Drawer(
     backgroundColor: AppColor.primaryVeryLighterColor,
       child: ListView(children: <Widget>[
-     buildHeader(
-        // name: firstName.value,
-        name: 'Regendra Suman',
-        designation: 'Mobile App Developer',
-        // designation: designationName.value,
-        onClicked: () {
-        }),
-
+        Obx(() => buildHeader(
+            name: firstName.value,
+            // designation: '',
+            onClicked: () {
+            })),
     Column(
       children: [
         buildMenuItem(
@@ -154,6 +152,7 @@ getAppDrawer(context) {
         text: 'drawer_logout'.tr,
         icon: AppIcons.logoutIcon(color: AppColor.primaryOriginalColor),
         onClicked: () async {
+         await SharedPreferencesValue().clearSharedPreferences();
           Get.offAllNamed(RouteConstant.login); // remove all preferences
         }),
   ]));
@@ -162,7 +161,7 @@ getAppDrawer(context) {
 Widget buildHeader({
   String? urlImage,
   String? name,
-  String? designation,
+  // String? designation,
   VoidCallback? onClicked,
 }) =>
     Padding(
@@ -206,7 +205,7 @@ Widget buildHeader({
                               ),
                             ),
                           ),
-                          SizedBox(
+                      /*    SizedBox(
                             width: Get.width * 0.45,
                             child: Text(
                               designation!,
@@ -214,7 +213,7 @@ Widget buildHeader({
                               style: AppTextStyle.bodyText4B(color: AppColor.whiteOriginalColor),
 
                             ),
-                          ),
+                          ),*/
                         ],
                       ),
                     ),

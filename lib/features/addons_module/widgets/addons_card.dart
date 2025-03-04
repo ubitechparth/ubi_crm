@@ -8,7 +8,8 @@ launchMap(String url) async {
 
 class AddonCard {
   AddonCard(
-      {this.id,
+      {
+
       this.key,
       this.permissionSts,
       this.sSts,
@@ -22,7 +23,7 @@ class AddonCard {
       this.event,
       });
 
-  var id;
+
   Key? key;
   bool? permissionSts;
   int? sSts;

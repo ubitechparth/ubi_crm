@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ubi_crm/core/globals.dart';
+import 'package:ubi_crm/core/utils/Internet_network/network_handle.dart';
 import 'package:ubi_crm/core_widget/country_picker.dart';
 import 'package:ubi_crm/core_widget/custom_elevated_button_widget.dart';
 import 'package:ubi_crm/core_widget/custom_field_component.dart';
-import 'package:ubi_crm/core_widget/snack_bar_widget.dart';
 import 'package:ubi_crm/core_widget/text_widget.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/controller/sign_up_controller.dart';
-import 'package:ubi_crm/features/auth/sign_up_module/view/widgets/personal_form_field_valication.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/sign_up_controller.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/presentation/widgets/personal_form_field_valication.dart';
 import 'package:ubi_crm/theme/color_constant.dart';
 import 'package:ubi_crm/theme/text_style.dart';
 import 'package:get/get.dart';
@@ -19,13 +18,14 @@ class PersonalDataForm extends StatelessWidget {
   }
 }
 
-
 Widget personalDataFormWidget(SignupController signupController, BuildContext context) {
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final FocusNode fieldName = FocusNode();
   final FocusNode fieldCompany = FocusNode();
   final FocusNode fieldEmail = FocusNode();
   final FocusNode fieldNumber = FocusNode();
   final FocusNode fieldPwd = FocusNode();
+
     return Obx(()=>
        Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,13 +48,14 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
           ),
           const SizedBox(height: 32),
           Form(
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //1. Name Field
                 FormFieldWithValidation(
                   focusNode: fieldName,
-                  controller: signupController.fullName,
+                  controller: signupController.userName,
                   hintText: 'Employee_Page_First_Name'.tr,
                   charCount: signupController.charCountName.value,
                   errorMessage: signupController.errorMessage.value,
@@ -63,6 +64,13 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                   onFieldSubmit: (val) {
                     FocusScope.of(context).requestFocus(fieldCompany);
                   },
+                  validator: (String? value){
+                    if(value!.isEmpty){
+                      return 'name can not be empty';
+                    }
+                    return null;
+                  },
+
                 ),
 
                 //2. Company Name Field
@@ -80,6 +88,12 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                         : FocusScope.of(context).requestFocus(fieldNumber);
                   },
                   onChanged: (value) => signupController.companyFullName.value = value,
+                  validator: (String? value){
+                    if(value!.isEmpty){
+                      return 'company name can not be empty';
+                    }
+                    return null;
+                  },
                 ),
 
                 //3. Email Field
@@ -97,12 +111,17 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                     },
                     onChanged: (value) => signupController.companyFullName.value = value,
                     keyboardType: TextInputType.emailAddress,
+                    validator: (String? value){
+                      if(value!.isEmpty){
+                        return 'email can not be empty';
+                      }
+                      return null;
+                    },
 
                   ),
 
                 //4. Phone Number
-                if (signupController.showField.value == false)
-                  Column(
+                if (signupController.showField.value == false)Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomFormFieldComponent(
@@ -138,7 +157,7 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                 //5. Password Field
                 CustomFormFieldComponent(
                   obscureText: signupController.isObscure.value,
-                  controller: signupController.createPwd,
+                  controller: signupController.passwordController,
                   hintText: 'Create_a_password'.tr,
                   underlineBorder: true,
                   suffixIcon: IconButton(
@@ -148,10 +167,15 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                     onPressed: () => signupController.changeObSecure(),
                   ),
                   contentPadding: EdgeInsets.symmetric(vertical: 15),
+                  validator: (String? value){
+                    if(value!.isEmpty){
+                      return 'password can not be empty';
+                    }
+                    return null;
+                  },
                 ),
                 SizedBox(height: 2),
-                if (!signupController.passwordErrorBool.value)
-                  Text(
+                if (!signupController.passwordErrorBool.value)Text(
                     signupController.passwordErrorMessage.value,
                     style: AppTextStyle.bodyText1SB(color: Colors.red),
                   ),
@@ -170,9 +194,12 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                 backgroundColor: AppColor.primaryOriginalColor,
                 child: TextWidget(text: 'NextText'.tr),
                 onPressed: () async {
+                  if(!formKey.currentState!.validate()){
+                    return;
+                  }
                   signupController.showPage.value = 2;
-                  return;
-                  if (isNetworkAvailable.value == true) {
+
+                  NetworkUtils.checkInternetAndExecute(() async {
                     signupController.splitName();
                     await signupController.validateNameInput();
                     await signupController.companyNameValidation();
@@ -185,11 +212,9 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
                         signupController.emailErrorBool.value == true &&
                         signupController.numberErrorBool.value == true &&
                         signupController.passwordErrorBool.value == true) {
-                      //controller.tempSignup();
+                      signupController.tempSignup();
                     }
-                  } else {
-                    SnackBarWidget().alertMsg("NoInternetText".tr);
-                  }
+                  });
                 },
               ),
             ),
@@ -197,5 +222,4 @@ Widget personalDataFormWidget(SignupController signupController, BuildContext co
         ],
       ),
     );
-
 }

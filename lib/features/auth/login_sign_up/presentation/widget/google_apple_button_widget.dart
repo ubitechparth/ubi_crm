@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:ubi_crm/core/app_assets.dart';
 import 'package:ubi_crm/core/globals.dart';
 import 'package:ubi_crm/core/routes/route_constant.dart';
+import 'package:ubi_crm/core/utils/Internet_network/network_handle.dart';
 import 'package:ubi_crm/core_widget/snack_bar_widget.dart';
 import 'package:ubi_crm/features/auth/login_sign_up/presentation/login_signup_controller.dart';
 
@@ -40,13 +41,9 @@ Widget buildOtherButtonWidget(context,controller){
           children: [
             InkWell(
               onTap: ()async{
-                if(isNetworkAvailable.value == true) {
-                  controller.applyMethod = 'google';
+                NetworkUtils.checkInternetAndExecute(() async {
                   controller.googleLogin(context);
-                }
-                else{
-                  SnackBarWidget().alertMsg("NoInternetText".tr);
-                }
+                });
               },
               child: Image.asset(
                 LoginPageAssets().googleImage,height: Get.height*0.09,

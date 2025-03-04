@@ -15,6 +15,7 @@ class LanguageSelectionPage extends GetView<LanguageSelectionController> {
     return Scaffold(
       appBar: CustomAppBar(
         elevation: 0,
+        padding: EdgeInsets.only(left: 10),
         title: AppTextStyle.appBarText("on_select_language".tr),
       ),
       body: SafeArea(

@@ -114,7 +114,7 @@ Widget buildLoginPageForm(LoginSignupController controller) {
                                               child:
                                                   CircularProgressIndicator())
                                           : Text(
-                                              controller.dialCodeNumber,
+                                              controller.countryCode,
                                               style: TextStyle(
                                                 color: Color(0XFF1C1B1F),
                                                 fontWeight: FontWeight.w600,
@@ -137,12 +137,12 @@ Widget buildLoginPageForm(LoginSignupController controller) {
                             style: AppTextStyle.bodyText1B(
                                 color: AppColor.dangerColor)),
                       if (controller.showLengthError.value == true &&
-                          controller.dialCodeNumber != '+91')
+                          controller.countryCode != '+91')
                         Text('7_digits'.tr,
                             style: AppTextStyle.bodyText1B(
                                 color: AppColor.dangerColor)),
                       if (controller.showIndLengthError.value == true &&
-                          controller.dialCodeNumber == '+91')
+                          controller.countryCode == '+91')
                         Text('10_digits'.tr,
                             style: AppTextStyle.bodyText1B(
                                 color: AppColor.dangerColor))
@@ -155,22 +155,35 @@ Widget buildLoginPageForm(LoginSignupController controller) {
                 child: CustomButtonWidget(
                   backgroundColor: AppColor.primaryOriginalColor,
                   onPressed: () async {
-              //   Get.toNamed(RouteConstant.dashboard);
+                    // Check internet connectivity before executing
+                    NetworkUtils.checkInternetAndExecute(() async {
+                      final String mobileNumber = controller.mobileNumberController.text;
 
-                       NetworkUtils.checkInternetAndExecute(() async {
-                      if (controller.mobileNumberController.text.isEmpty) {
+                     /* if (mobileNumber.isEmpty) {
                         controller.showError.value = true;
                         return;
                       }
+
                       controller.showError.value = false;
-                      await controller.checkUserExistOrNot(
-                        controller.mobileNumberController.text,
-                        controller.countryCode,
-                      );
+
+                      // Handle country-specific mobile number length validations
+                      if (controller.countryCode == '+91' && mobileNumber.length != 10) {
+                        controller.showIndLengthError.value = true;
+                        return;
+                      }
+                      else if (controller.countryCode != '+91' && mobileNumber.length < 7) {
+                        controller.showLengthError.value = true;
+                        return;
+                      }
+
+                      controller.showIndLengthError.value = false;
+                      controller.showLengthError.value = false;
+*/
+                      // Proceed to check user existence
+                      await controller.checkUserExistOrNot(mobileNumber, controller.countryCode);
                     });
                   },
-                  child: TextWidget(
-                      text: 'continue_text'.tr, fontSize: Get.width * 0.045),
+                  child: TextWidget(text: 'continue_text'.tr, fontSize: Get.width * 0.045),
                 ),
               ),
             ],

@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ubi_crm/core/app_assets.dart';
 import 'package:ubi_crm/core/globals.dart';
+import 'package:ubi_crm/core_widget/common_loader.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/data/dataSources/sign_up_remote_source.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/data/repositories/sign_up_repo.dart';
+import 'package:ubi_crm/features/auth/sign_up_module/domain/usecases/temp_sign_use_case.dart';
 
 class SignupController extends GetxController {
 
+  late TempSignUpUseCase tempSignUpUseCase;
 
   // Number employees list
   RxList<String> options = [
@@ -93,10 +98,10 @@ class SignupController extends GetxController {
   // AlertNotification notify = AlertNotification();
   final GlobalKey<FormState> finalSignupFormKey = GlobalKey<FormState>();
 
-  TextEditingController fullName = TextEditingController();
+  TextEditingController userName = TextEditingController();
   TextEditingController businessEmail = TextEditingController();
   TextEditingController phoneNumber = TextEditingController();
-  TextEditingController createPwd = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   TextEditingController companyName = TextEditingController();
   TextEditingController designationName = TextEditingController();
   TextEditingController pinController = TextEditingController();
@@ -104,6 +109,7 @@ class SignupController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
+    tempSignUpUseCase = TempSignUpUseCase(SignRepositoryImpl(SignUpRemoteDataSourceImpl()));
     argument = Get.arguments;
     if (argument != null) {
       userId = argument['emailNumber'] ?? '';
@@ -119,8 +125,8 @@ class SignupController extends GetxController {
       }
     }
 
-    fullName.addListener(() {
-      charCountName.value = fullName.text.length;
+    userName.addListener(() {
+      charCountName.value = userName.text.length;
     });
     businessEmail.addListener(() {
       charCountEmail.value = businessEmail.text.length;
@@ -139,8 +145,8 @@ class SignupController extends GetxController {
   }
 
   splitName() {
-    List splitName = fullName.text.split(' ');
-    firstName = splitName.length > 1 ? splitName[0] : fullName.text;
+    List splitName = userName.text.split(' ');
+    firstName = splitName.length > 1 ? splitName[0] : userName.text;
   }
 
   void changeObSecure() {
@@ -186,13 +192,13 @@ class SignupController extends GetxController {
 
   // Custom validation logic
   validateNameInput() {
-    if (fullName.text.isEmpty) {
+    if (userName.text.isEmpty) {
       errorMessage.value = "Full_name_is_required".tr;
       errorMessageBool.value = false;
       return;
-    } else if (fullName.text.isNotEmpty) {
-      if (!RegExp(r"^[a-z A-Z/+']+$").hasMatch(fullName.text.trim()) ||
-          RegExp(r'^[+ 0-9]+$').hasMatch(fullName.text.trim())) {
+    } else if (userName.text.isNotEmpty) {
+      if (!RegExp(r"^[a-z A-Z/+']+$").hasMatch(userName.text.trim()) ||
+          RegExp(r'^[+ 0-9]+$').hasMatch(userName.text.trim())) {
         errorMessage.value = 'Invalid_Name'.tr;
         errorMessageBool.value = false;
         return;
@@ -227,11 +233,11 @@ class SignupController extends GetxController {
   }
 
   validatePassword() {
-    if (createPwd.text.isEmpty) {
+    if (passwordController.text.isEmpty) {
       passwordErrorMessage.value = "onSignUpWithOtpVerifyPasswordRequired".tr;
       passwordErrorBool.value = false;
       return;
-    } else if (createPwd.text.length <= 7) {
+    } else if (passwordController.text.length <= 7) {
       passwordErrorMessage.value = "onSignUpWithOtpVerifyMinimum8Charcters".tr;
       passwordErrorBool.value = false;
       return;
@@ -285,9 +291,9 @@ class SignupController extends GetxController {
     if (showPage.value == 1) {
       Get.back();
       Future.delayed(const Duration(milliseconds: 500));
-      fullName.clear();
+      userName.clear();
       businessEmail.clear();
-      createPwd.clear();
+      passwordController.clear();
       companyName.clear();
       designationName.clear();
     } else {
@@ -299,4 +305,14 @@ class SignupController extends GetxController {
     }
   }
 
+  tempSignup() async {
+
+    CommonLoader().showOverlayLoader();
+    await tempSignUpUseCase.execute(
+        userName.text,
+        companyName.text,
+        passwordController.text,
+        countryCode,phoneNumber.text,businessEmail.text,);
+
+  }
 }
